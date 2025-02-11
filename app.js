@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 const corsOptions = {
-  origin: ['http://localhost:5173','https://mabbar.maulanasopian.my.id'],
+  origin: ['http://localhost:5173','https://mabbar.web.id'],
   credentials: true,
 };
 app.use(cors(corsOptions));
