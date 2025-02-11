@@ -59,3 +59,20 @@ exports.deleteSiswa = async (req, res) => {
       res.json({ status: false, message: error.message, error });
     }
   };
+
+exports.login = async (req, res) => {
+  try {
+    const { nama, password } = req.body;
+    const Siswa = await siswa.findOne({ where: { nama : nama } });
+    if (!Siswa) throw new Error('Siswa not found');
+    const isMatch = await bcrypt.compare(password, Siswa.password);
+    if (!isMatch) throw new Error('Invalid credentials');
+    const token = jwt.sign({ userId: Siswa.user_id, idSiswa: Siswa.id }, 'mabbar', { expiresIn: '1h' });
+    res.json({ status: true, message: 'Login successful', data : {
+      token : token,
+      nama : Siswa.nama
+    } });
+  } catch (error) {
+    res.json({ status : false, message: error.message, error });
+  }
+};
