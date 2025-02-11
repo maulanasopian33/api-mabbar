@@ -1,0 +1,33 @@
+@idmateri =de3a14de-eb32-4544-9be0-4c046fb3b701
+@iduser = 43ab094f-9637-405f-ba21-f70a4386a978
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhM2ZlZjliMS1hMzdmLTQ5ODgtYjNlMC1jY2RkNDVlN2M5OTIiLCJpYXQiOjE3MzkxOTQ4NTEsImV4cCI6MTczOTE5ODQ1MX0.gmawbWffIesQKQJzMQmAfKyk5feTmNPYvtl3qfC8prQ
+### Get all materi
+GET http://localhost:3000/api/materi?id=al-qiraah
+Authorization: Bearer {{token}}
+
+### Get materi by ID
+GET http://localhost:3000/api/materi/{{idmateri}}
+
+### Create new materi
+POST http://localhost:3000/api/materi
+Content-Type: application/json
+
+{
+  "judul": "Belajar Bahasa Arab",
+  "materi": "al-qiraah",
+  "featureimage": "image.jpg",
+  "content": "Isi materi pembelajaran",
+  "user_id": "a3fef9b1-a37f-4988-b3e0-ccdd45e7c992"
+}
+
+### Update materi
+PUT http://localhost:3000/api/materi/{{idmateri}}
+Content-Type: application/json
+
+{
+  "judul": "Update Belajar Bahasa Arab",
+  "content": "Materi baru yang diperbarui"
+}
+
+### Delete materi
+DELETE http://localhost:3000/api/materi/{idmateri}

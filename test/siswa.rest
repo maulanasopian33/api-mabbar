@@ -1,0 +1,10 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhM2ZlZjliMS1hMzdmLTQ5ODgtYjNlMC1jY2RkNDVlN2M5OTIiLCJpYXQiOjE3MzkyNDQzNTEsImV4cCI6MTczOTI0Nzk1MX0.i3qHUod4dgqJCTAA6rsQDYx9vGmK1qPV1PDledq4qXI
+### Get all materi
+POST http://localhost:3000/api/siswa
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nama": "Sopian",
+  "password": "al-qiraah"
+}
