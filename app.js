@@ -10,6 +10,8 @@ const usersRouter = require('./routes/users');
 const materiRoutes = require('./routes/materiRoutes');
 const mediaRoutes = require('./routes/media');
 const siswaRoutes = require('./routes/siswa');
+const setoranRoutes = require('./routes/setoran');
+const itemSetoranRoutes = require('./routes/itemSetoran')
 
 const app = express();
 
@@ -34,6 +36,8 @@ app.use('/api/auth', usersRouter);
 app.use('/api/materi', materiRoutes);
 app.use('/api/media', mediaRoutes);
 app.use('/api/siswa', siswaRoutes);
+app.use('/api/setoran', setoranRoutes);
+app.use('/api/item-setoran', itemSetoranRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

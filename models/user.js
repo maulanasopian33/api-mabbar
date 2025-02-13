@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       user.hasMany(models.materi, { foreignKey: 'user_id', onDelete: 'CASCADE' });
       user.hasMany(models.siswa, { foreignKey: 'user_id', onDelete: 'CASCADE' });
+      user.hasMany(models.list_setoran, { foreignKey: 'user_id', onDelete: 'CASCADE' });
     }
   }
   user.init({

@@ -36,29 +36,44 @@ exports.addSiswa = async (req, res) => {
 };
 exports.updateSiswa = async (req, res) => {
     try {
-      const Siswa = await siswa.findByPk(req.params.id);
-      if (!Siswa) throw new Error('Siswa not found');
-      let payload = req.body
-      if(payload.password){
-        payload.password = await bcrypt.hash(payload.password, 10)
-      }
-      await Siswa.update(payload);
-      res.json({ status: true, message: 'Siswa updated successfully', Siswa });
+        const Siswa = await siswa.findByPk(req.params.id);
+        if (!Siswa) throw new Error('Siswa not found');
+        let payload = req.body
+        if (payload.password) {
+            payload.password = await bcrypt.hash(payload.password, 10)
+        }
+        await Siswa.update(payload);
+        res.json({
+            status: true,
+            message: 'Siswa updated successfully',
+            Siswa
+        });
     } catch (error) {
-      res.json({ status: false, message: error.message, error });
+        res.json({
+            status: false,
+            message: error.message,
+            error
+        });
     }
-  };
+};
 
 exports.deleteSiswa = async (req, res) => {
     try {
-      const Siswa = await siswa.findByPk(req.params.id);
-      if (!Siswa) throw new Error('Siswa not found');
-      await Siswa.destroy();
-      res.json({ status: true, message: 'Siswa deleted successfully' });
+        const Siswa = await siswa.findByPk(req.params.id);
+        if (!Siswa) throw new Error('Siswa not found');
+        await Siswa.destroy();
+        res.json({
+            status: true,
+            message: 'Siswa deleted successfully'
+        });
     } catch (error) {
-      res.json({ status: false, message: error.message, error });
+        res.json({
+            status: false,
+            message: error.message,
+            error
+        });
     }
-  };
+};
 
 exports.login = async (req, res) => {
   try {
