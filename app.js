@@ -12,6 +12,7 @@ const mediaRoutes = require('./routes/media');
 const siswaRoutes = require('./routes/siswa');
 const setoranRoutes = require('./routes/setoran');
 const itemSetoranRoutes = require('./routes/itemSetoran')
+const latihanRoutes = require('./routes/latihan');
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use('/api/media', mediaRoutes);
 app.use('/api/siswa', siswaRoutes);
 app.use('/api/setoran', setoranRoutes);
 app.use('/api/item-setoran', itemSetoranRoutes);
+app.use('/api/latihan', latihanRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,10 @@
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhM2ZlZjliMS1hMzdmLTQ5ODgtYjNlMC1jY2RkNDVlN2M5OTIiLCJpYXQiOjE3Mzk0MjAyNDgsImV4cCI6MTczOTQyMzg0OH0.7MoEr1kKANKsXFZLluxeZZaBl8yRLR0PUuABcw1M_lk
+
+POST http://localhost:3000/api/latihan
+Authorization: Bearer {{token}}
+
+{
+  "nama_latihan": "Belajar Bahasa Arab",
+  "jenis": "Pilihan Ganda",
+}
