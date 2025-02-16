@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       list_setoran.belongsTo(models.user, { foreignKey: 'user_id', onDelete: 'CASCADE' });
       list_setoran.hasMany(models.item_setoran, { foreignKey: 'id_setoran', onDelete: 'CASCADE' });
+      list_setoran.hasMany(models.penilaian_setoran, { foreignKey: 'id_setoran', onDelete: 'CASCADE' });
     }
   }
   list_setoran.init({

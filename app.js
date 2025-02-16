@@ -13,6 +13,8 @@ const siswaRoutes = require('./routes/siswa');
 const setoranRoutes = require('./routes/setoran');
 const itemSetoranRoutes = require('./routes/itemSetoran')
 const latihanRoutes = require('./routes/latihan');
+const penilaianRoutes = require('./routes/penilaian');
+const penilaianSetoranRoutes = require('./routes/penilaian-setoran');
 
 const app = express();
 
@@ -40,6 +42,8 @@ app.use('/api/siswa', siswaRoutes);
 app.use('/api/setoran', setoranRoutes);
 app.use('/api/item-setoran', itemSetoranRoutes);
 app.use('/api/latihan', latihanRoutes);
+app.use('/api/penilaian', penilaianRoutes);
+app.use('/api/penilaian-setoran', penilaianSetoranRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

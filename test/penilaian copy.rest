@@ -1,0 +1,18 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhM2ZlZjliMS1hMzdmLTQ5ODgtYjNlMC1jY2RkNDVlN2M5OTIiLCJpYXQiOjE3Mzk2NTgwNTcsImV4cCI6MTczOTY2MTY1N30.YY3eGwTTc2BrqA7SUpZKaFR36wDkEIVZrCpD57vxqIg
+@id_latihan =d6c72845-d3e7-49a2-8c91-3d9a90046a25
+### Get all materi
+POST http://localhost:3000/api/penilaian-setoran/
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "id_siswa": "7",
+    "id_setoran": "72b9ba44-ea78-4f13-96eb-95477129b15d",
+    "id_item": "14732238-ac4d-43ed-a944-b3c0097f28cc",
+    "status": false
+}
+
+###
+GET http://localhost:3000/api/penilaian-setoran/7
+Authorization: Bearer {{token}}
+Content-Type: application/json

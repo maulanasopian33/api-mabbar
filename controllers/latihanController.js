@@ -166,7 +166,7 @@ exports.storePenilaian = async (req, res) => {
         const decoded = jwt.verify(token, 'mabbar');
         const payload = {
             id_latihan : id_latihan,
-            id_penilaian : "idp-"+id_latihan,
+            id_penilaian : decoded.idSiswa+"-"+id_latihan,
             id_siswa : decoded.idSiswa,
             nilai : nilai,
         }
