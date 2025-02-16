@@ -9,10 +9,10 @@ Content-Type: application/json
     "id_siswa": "7",
     "id_setoran": "72b9ba44-ea78-4f13-96eb-95477129b15d",
     "id_item": "14732238-ac4d-43ed-a944-b3c0097f28cc",
-    "status": false
+    "status": true
 }
 
 ###
-GET http://localhost:3000/api/penilaian-setoran/7
+GET http://localhost:3000/api/penilaian-setoran/7/72b9ba44-ea78-4f13-96eb-95477129b15d
 Authorization: Bearer {{token}}
 Content-Type: application/json
