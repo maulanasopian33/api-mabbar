@@ -16,3 +16,8 @@ Content-Type: application/json
 GET http://localhost:3000/api/penilaian-setoran/7/72b9ba44-ea78-4f13-96eb-95477129b15d
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
+###
+GET http://localhost:3000/api/penilaian-setoran/get-rangking
+Authorization: Bearer {{token}}
+Content-Type: application/json
