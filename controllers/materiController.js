@@ -30,7 +30,10 @@ exports.getMateriById = async (req, res) => {
   try {
     const Materi = await materi.findByPk(req.params.id, { 
         include: [
-            { model: listlampiran },
+            { 
+              model: listlampiran,
+              order: [['updatedAt', 'ASC']]
+            },
             { model: user, attributes: { exclude: ['password']} }
         ]
     });
@@ -62,7 +65,7 @@ exports.createMateri = async (req, res) => {
     const convertLampiran = lampiran.map((item) => {
       return {
         idmateri : newMateri.idmateri,
-        jenis : "Images",
+        jenis : item.type,
         file : item.path
       }
     })
@@ -88,7 +91,7 @@ exports.updateMateri = async (req, res) => {
       return {
         idlampiran : item.idlampiran,
         idmateri : req.body.idmateri,
-        jenis : "Images",
+        jenis : item.jenis,
         file : item.file
       }
     })

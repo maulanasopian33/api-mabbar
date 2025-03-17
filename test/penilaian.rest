@@ -1,6 +1,12 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhM2ZlZjliMS1hMzdmLTQ5ODgtYjNlMC1jY2RkNDVlN2M5OTIiLCJpYXQiOjE3Mzk2NTgwNTcsImV4cCI6MTczOTY2MTY1N30.YY3eGwTTc2BrqA7SUpZKaFR36wDkEIVZrCpD57vxqIg
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhM2ZlZjliMS1hMzdmLTQ5ODgtYjNlMC1jY2RkNDVlN2M5OTIiLCJpYXQiOjE3NDIxMzUzMTYsImV4cCI6MTc0MjEzODkxNn0.2za140YnmYwmqazGJ5QF15l0-sVqltlnPpULQm1Ictg
 @id_latihan =d6c72845-d3e7-49a2-8c91-3d9a90046a25
 ### Get all materi
 GET http://localhost:3000/api/penilaian/{{id_latihan}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET http://localhost:3000/api/penilaian/siswa
 Authorization: Bearer {{token}}
 Content-Type: application/json
