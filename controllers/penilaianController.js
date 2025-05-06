@@ -126,7 +126,9 @@ exports.getpenilaianSiswa = async (req, res) => {
         const nilaiakhir = hitungNilaiAkhir(nilailatihan, hasilsetoran);
         res.json({
             status: true,
-            data: nilaiakhir,
+            nilaiakhir: nilaiakhir,
+            nilailatihan : nilailatihan,
+            hasilsetoran : hasilsetoran,
         });
     } catch (error) {
         res.json({ status: false, message: error.message, error });
